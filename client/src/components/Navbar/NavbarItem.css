@@ -1,0 +1,14 @@
+@tailwind components;
+
+@layer components {
+    .Navbar-Item {
+        @apply relative;
+    }
+    .Navbar-Item::before {
+        content: "";
+        @apply absolute w-0 h-1 rounded-lg bg-lightsky top-full transition-all duration-200;
+    }
+    .Navbar-Item {
+        @apply hover:before:w-full;
+    }
+}

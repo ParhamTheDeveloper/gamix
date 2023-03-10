@@ -1,0 +1,9 @@
+@tailwind components;
+
+@layer components {
+  .Header {
+    @apply h-screen min-h-[480px] max-h-[870px] flex flex-col justify-center items-center gap-y-4 px-8;
+    background: url("../../../public/Images/3D/windows-11-blue-background-dark.jpg") no-repeat fixed bottom/cover;
+    background-clip: contain;
+  }
+}

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  direction: rtl;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-900;
+  }
+  .Container {
+    @apply 2xl:container mx-auto;
+  }
+  .Transition {
+    @apply transition-all duration-200;
+  }
+  .Active-Blur {
+    @apply bg-opacity-95 backdrop-blur-xl;
+  }
+}
