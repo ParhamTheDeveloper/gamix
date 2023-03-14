@@ -1,14 +1,16 @@
-import { useRef } from "react";
-import { useTitle } from "../../../hooks";
-import { Header } from "../../Header";
 import "./Home.css";
+import { Header } from "../../Header";
+import { Courses } from "./Courses";
+import { useTitle } from "../../../hooks";
+import { useRef } from "react";
 
 const Home = () => {
   const homeRef = useRef(null);
 
   return (
-    <div className="Home" ref={homeRef}>
+    <div className="Home Container Transition" ref={homeRef}>
       <Header />
+      <Courses />
     </div>
   );
 };

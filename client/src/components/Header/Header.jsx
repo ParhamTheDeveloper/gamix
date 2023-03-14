@@ -4,7 +4,7 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="Header Container">
+    <header className="Header">
       <h1 className="text-3xl lg:text-5xl leading-[3rem] font-extrabold text-white text-center">
         برنامه نویسی ویندوز رو از همین جا شروع کن
       </h1>

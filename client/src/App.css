@@ -8,7 +8,7 @@
 
 @layer base {
   body {
-    @apply bg-neutral-900;
+    @apply bg-[#050511] selection:bg-mediumsky selection:text-white;
   }
   .Container {
     @apply 2xl:container mx-auto;

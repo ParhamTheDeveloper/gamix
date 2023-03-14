@@ -2,9 +2,6 @@
 
 @layer components {
   .Picture {
-    @apply w-full h-full;
-  }
-  .Picture-InnerImg {
-    @apply rounded-xl;
+    @apply w-full rounded-xl;
   }
 }

@@ -2,9 +2,9 @@ import "./Picture.css";
 
 const Picture = ({ src, alt, className }) => {
   return (
-    <picture className={`Picture ${className}`}>
+    <picture>
       <img
-        className="Picture-InnerImg"
+        className={`Picture Transition ${className}`}
         src={src}
         alt={alt}
         loading="lazy"

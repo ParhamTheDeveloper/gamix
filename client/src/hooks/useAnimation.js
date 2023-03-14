@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import IntersectingAnimation from "../Animation/Animation";
+import { IntersectingAnimation } from "../utils/Animation";
 
 const useAnimation = (ref, styles) => {
   useEffect(() => {
