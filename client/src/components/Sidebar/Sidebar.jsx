@@ -9,7 +9,7 @@ const Sidebar = forwardRef(({ items }, ref) => {
   });
   
   return (
-    <div ref={ref} className="Sidebar Transition">
+    <div ref={ref} className="Sidebar ScrollY Transition">
       <div className="Sidebar-List Transition">
         {items.map((item, index) => (
           <SidebarItem key={index} link={item.link} icon={item.icon}>

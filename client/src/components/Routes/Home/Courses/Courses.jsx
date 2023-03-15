@@ -1,4 +1,5 @@
 import "./Courses.css";
+import * as Icons from "react-bootstrap-icons";
 import { Card } from "../../../Card";
 import { useEffect, useState } from "react";
 
@@ -8,7 +9,10 @@ const Courses = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="Courses">
+    <section className="Courses">
+      <div className="w-fit mx-8 mt-12 text-white font-bold text-2xl flex gap-x-4 items-center justify-center">
+        <Icons.GraphUpArrow /> جدیدترین دوره ها
+      </div>
       <div className="Courses-Inner">
         {new Array(10)
           .fill({
@@ -34,7 +38,7 @@ const Courses = () => {
             );
           })}
       </div>
-    </div>
+    </section>
   );
 };
 

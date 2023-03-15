@@ -3,7 +3,7 @@ import * as Icons from "react-bootstrap-icons";
 import { Picture } from "../Picture";
 import { Button } from "../Button";
 import { useAnimation } from "../../hooks";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Card = ({
   title,
@@ -17,13 +17,19 @@ const Card = ({
   const cardRef = useRef(null);
 
   useAnimation(cardRef, "Card-In-Sight");
-  document.body.style.setProperty(
-    "--Card-Transition-Delay",
-    `${animationDelay * 10}ms`
-  );
+  useEffect(() => {
+    document.body.style.setProperty(
+      "--Card-Transition-Delay",
+      `${animationDelay * 10}ms`
+    );
+  }, []);
 
   return (
-    <figure ref={cardRef} className={`Card Transition ${className}`}>
+    <figure
+      ref={cardRef}
+      className={`Card Transition ${className}`}
+      tabIndex="0"
+    >
       <Picture src={imgsrc} className="Card-Picture" />
       <p className="text-white my-4">{title}</p>
       <div className="w-fit flex flex-row gap-x-2 items-center justify-center mt-4 text-md text-white">

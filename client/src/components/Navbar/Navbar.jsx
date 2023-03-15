@@ -17,7 +17,7 @@ const Navbar = () => {
     {
       content: "دوره ها",
       link: "/courses",
-      icon: <Icons.ViewList />,
+      icon: <Icons.Collection />,
     },
     {
       content: "درباره ما",

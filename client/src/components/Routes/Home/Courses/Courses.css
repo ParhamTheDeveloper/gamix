@@ -1,7 +1,7 @@
 @tailwind components;
 
 @layer components {
-    .Courses-Inner {
-        @apply overflow-hidden columns-1 md:columns-2 lg:columns-4 p-8;
-    }
+  .Courses-Inner {
+    @apply overflow-hidden columns-1 md:columns-2 lg:columns-4 p-8;
+  }
 }

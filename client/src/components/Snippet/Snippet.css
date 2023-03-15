@@ -1,0 +1,13 @@
+@tailwind components;
+
+@layer components {
+  .Snippet {
+    @apply m-8 bg-mediumblue text-white rounded-lg p-0;
+  }
+  .Snippet-Pre {
+    @apply rounded-lg p-8 overflow-x-auto;
+    direction: ltr !important;
+  }
+  .Snippet-Code {
+  }
+}

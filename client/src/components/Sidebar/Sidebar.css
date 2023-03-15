@@ -14,22 +14,13 @@
   .Sidebar-List {
     @apply w-full h-full flex flex-col px-4 py-2;
   }
-  .Sidebar::-webkit-scrollbar {
-    @apply w-1 h-full p-1;
-  }
-  .Sidebar::-webkit-scrollbar-track {
-    @apply p-1;
-  }
-  .Sidebar::-webkit-scrollbar-thumb {
-    @apply w-0 bg-gray-500 rounded-xl;
-  }
 
   @media only screen and (min-height: 0px) and (max-height: 479.98px) {
     .Sidebar {
       @apply overflow-scroll;
     }
     .Sidebar-List {
-      min-height: 400px;
+      min-height: 320px;
     }
   }
 }

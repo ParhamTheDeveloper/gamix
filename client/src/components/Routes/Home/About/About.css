@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .About {
+    @apply w-full h-fit;
+  }
+  .About-Inner {
+    @apply w-full h-fit flex flex-col lg:flex-row bg-white;
+  }
+  .About-Me-Picture {
+    @apply lg:basis-2/4 min-h-[600px];
+    background: url("../../../../../public/Images/night_mountain.jpg")
+      center/cover;
+  }
+  .About-Me {
+    @apply lg:basis-2/4 w-full min-h-[600px] bg-gradient-to-b from-[#050511] to-mediumblue;
+  }
+  .Snippet {
+    @apply py-8;
+    direction: ltr !important;
+  }
+}

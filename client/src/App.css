@@ -7,6 +7,23 @@
 }
 
 @layer base {
+  .ScrollY::-webkit-scrollbar {
+    @apply w-1 h-full p-1;
+  }
+  .ScrollY::-webkit-scrollbar-track,
+  .ScrollX::-webkit-scrollbar-track {
+    @apply p-1;
+  }
+  .ScrollY::-webkit-scrollbar-thumb {
+    @apply w-0 px-4 bg-gray-500 rounded-xl;
+  }
+  .ScrollX::-webkit-scrollbar {
+    @apply w-full h-1 p-1;
+  }
+  .ScrollX::-webkit-scrollbar-thumb {
+    @apply w-0 !bg-gray-500 rounded-xl;
+  }
+
   body {
     @apply bg-[#050511] selection:bg-mediumsky selection:text-white;
   }
@@ -18,5 +35,11 @@
   }
   .Active-Blur {
     @apply bg-opacity-95 backdrop-blur-xl;
+  }
+
+  @media (prefers-reduced-motion) {
+    .Transition {
+      @apply transition-none;
+    }
   }
 }
