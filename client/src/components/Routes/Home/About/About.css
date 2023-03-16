@@ -5,18 +5,14 @@
     @apply w-full h-fit;
   }
   .About-Inner {
-    @apply w-full h-fit flex flex-col lg:flex-row bg-white;
+    @apply w-full h-fit flex flex-col lg:flex-row bg-gradient-to-b from-[#050511] to-mediumblue;
   }
   .About-Me-Picture {
     @apply lg:basis-2/4 min-h-[600px];
-    background: url("../../../../../public/Images/night_mountain.jpg")
-      center/cover;
+    background: url("../../../../../public/Images/Parham\ transparent\ pic.png")
+       top/cover;
   }
   .About-Me {
-    @apply lg:basis-2/4 w-full min-h-[600px] bg-gradient-to-b from-[#050511] to-mediumblue;
-  }
-  .Snippet {
-    @apply py-8;
-    direction: ltr !important;
+    @apply lg:basis-2/4 w-full min-h-[600px];
   }
 }

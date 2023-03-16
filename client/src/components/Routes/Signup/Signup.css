@@ -1,0 +1,18 @@
+@tailwind components;
+
+@layer components {
+  .Signup-Wrapper {
+    @apply h-full p-8 flex flex-col justify-center items-center;
+    background: url("../../../../public/Images/3D/windows-11-colorful-abstract-background-digital-art-4k-background.jpg")
+      center/cover;
+  }
+  .Signup {
+    @apply w-72 md:w-96 h-[37rem] flex flex-col border border-mediumblue rounded-3xl px-8 py-20;
+  }
+
+  @media only screen and (max-width: 300px) {
+    .Signup {
+      width: 100%;
+    }
+  }
+}

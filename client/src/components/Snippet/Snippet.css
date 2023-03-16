@@ -2,12 +2,14 @@
 
 @layer components {
   .Snippet {
-    @apply m-8 bg-mediumblue text-white rounded-lg p-0;
+    @apply m-8 bg-mediumblue text-white rounded-lg p-0 drop-shadow-lg;
+    direction: ltr !important;
   }
   .Snippet-Pre {
     @apply rounded-lg p-8 overflow-x-auto;
     direction: ltr !important;
   }
-  .Snippet-Code {
+  .Snippet-Copy-Button-Hidden.Snippet-Copy-Button-Content {
+    @apply hidden;
   }
 }

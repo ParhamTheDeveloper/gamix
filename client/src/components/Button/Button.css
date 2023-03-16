@@ -2,7 +2,7 @@
 
 @layer components {
   .Button {
-    @apply block cursor-pointer drop-shadow-xl text-white text-center relative py-2 px-8 flex flex-row justify-center items-center gap-2 overflow-hidden rounded-2xl bg-mediumblue;
+    @apply block cursor-pointer drop-shadow-xl text-white text-center relative py-2 px-8 flex flex-row justify-center items-center gap-2 overflow-hidden rounded-2xl bg-blue-600;
   }
   .Button-Ripple {
     @apply absolute rounded-[50%] bg-white bg-opacity-70;

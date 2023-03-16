@@ -1,8 +1,13 @@
+import { ArrowDown } from "react-bootstrap-icons";
 import { Button } from "../Button";
-import { Picture } from "../Picture";
+import { Wave } from "../Wave";
 import "./Header.css";
 
 const Header = () => {
+  const handleScrollDownButton = () => {
+    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+  };
+
   return (
     <header className="Header">
       <h1 className="text-3xl lg:text-5xl leading-[3rem] font-extrabold text-white text-center">
@@ -14,19 +19,23 @@ const Header = () => {
         <span className="text-lightsky">DirectX</span>
       </h2>
       <div className="flex flex-col sm:flex-row gap-4 mt-8">
-        <Button
-          link="/signup"
-          className="h-14 text-xl !bg-blue-600 hover:drop-shadow-none hover:shadow-2xl hover:shadow-blue-700"
-        >
+        <Button link="/signup" className="Header-Start-Learning-Button">
           شروع یادگیری
         </Button>
         <Button
           link="/login"
-          className="h-14 text-xl hover:drop-shadow-none hover:shadow-2xl hover:shadow-mediumblue"
+          className="z-10 h-14 text-xl hover:drop-shadow-none hover:shadow-2xl hover:shadow-mediumblue"
         >
           ورود
         </Button>
       </div>
+      <Wave src="/Images/Waves/wave (3).svg" className="Header-Wave" />
+      <button
+        className="Header-Scroll-Down-Button Transition"
+        onClick={handleScrollDownButton}
+      >
+        <ArrowDown className="Transition"/>
+      </button>
     </header>
   );
 };

@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .Footer {
+    @apply bg-slate-900;
+  }
+  .Footer-Container {
+    @apply w-full h-fit relative p-8;
+  }
+}

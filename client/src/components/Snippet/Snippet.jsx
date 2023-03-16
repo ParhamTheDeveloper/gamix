@@ -1,27 +1,40 @@
-import { useRef } from "react";
-import { Button } from "../Button";
 import "./Snippet.css";
+import { Check2, Clipboard } from "react-bootstrap-icons";
+import { Button } from "../Button";
+import { useRef, useState } from "react";
 
-const Snippet = ({ codes, extension }) => {
+const Snippet = ({ codes, extension, className }) => {
   const codeRef = useRef(null);
+  const [alreadyCopied, setAlreadyCopied] = useState(false);
 
-  const handleCopyClick = () => {
-     navigator.clipboard.writeText(codeRef.current.textContent);
+  const handleCopyClick = (e) => {
+    let text = codeRef.current.textContent;
+    navigator.clipboard.writeText(text);
+    e.currentTarget.classList.add("!bg-green-400");
+    setAlreadyCopied(true);
   };
 
   return (
-    <div className="Snippet">
+    <div className={`Snippet ${className}`}>
       <div className="w-full h-12 flex flex-row justify-between items-center rounded-tl-lg rounded-tr-lg bg-slate-700">
         <div className="mx-8">{extension}</div>
         <Button
-          className="h-full rounded-none rounded-tl-lg"
+          className="w-32 h-full !rounded-none !rounded-tl-lg"
           onClick={handleCopyClick}
         >
-          کپی
+          {alreadyCopied ? (
+            <Check2 />
+          ) : (
+            <span className="flex flex-row justify-center item-center gap-x-2">
+              <Clipboard /> کپی
+            </span>
+          )}
         </Button>
       </div>
       <pre className="Snippet-Pre ScrollX">
-        <code className="Snippet-Code" ref={codeRef}>{codes}</code>
+        <code className="Snippet-Code" ref={codeRef}>
+          {codes}
+        </code>
       </pre>
     </div>
   );

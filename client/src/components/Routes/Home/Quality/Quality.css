@@ -1,0 +1,18 @@
+@tailwind components;
+
+@layer components {
+  .Quality {
+    @apply w-full h-fit;
+  }
+  .Quality-Inner {
+    @apply w-full h-fit flex flex-col lg:flex-row;
+  }
+  .Quality-Picture {
+    @apply md:basis-2/4 min-h-[600px];
+    background: url("../../../../../public/Images/3D/windows-11-365-abstract-light-background-digital-art-4k-background.jpg")
+      center/cover;
+  }
+  .Quality-Description {
+    @apply md:basis-2/4 w-full min-h-[600px] bg-gradient-to-b from-[#050511] to-mediumblue;
+  }
+}

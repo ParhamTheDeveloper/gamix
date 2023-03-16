@@ -2,6 +2,9 @@
 
 @layer components {
   .Courses-Inner {
-    @apply overflow-hidden columns-1 md:columns-2 lg:columns-4 p-8;
+    @apply overflow-hidden py-8 px-8 md:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+  .Courses-Card {
+    @apply md:mx-2 mt-4;
   }
 }

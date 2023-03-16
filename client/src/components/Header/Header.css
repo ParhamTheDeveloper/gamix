@@ -2,9 +2,22 @@
 
 @layer components {
   .Header {
-    @apply h-screen min-h-[580px] max-h-[870px] flex flex-col justify-center items-center gap-y-4 px-8;
+    @apply h-screen min-h-[680px] max-h-[870px] relative flex flex-col justify-center items-center gap-y-4 px-8;
     background: url("../../../public/Images/3D/windows-11-blue-background-dark.jpg")
-      no-repeat bottom/cover;
+      no-repeat fixed bottom/cover;
     background-clip: contain;
+  }
+  .Header-Start-Learning-Button {
+    @apply h-14 z-10 text-xl hover:drop-shadow-none hover:shadow-2xl hover:shadow-blue-700 border-2 border-blue-600 hover:!bg-blue-600;
+    background: none !important;
+  }
+  .Header-Wave {
+    @apply absolute bottom-0;
+  }
+  .Header-Scroll-Down-Button {
+    @apply w-20 h-20 absolute bottom-4 md:bottom-6 lg:bottom-16 text-white text-3xl rounded-full bg-[#050511] flex justify-center items-center;
+  }
+  .Header-Scroll-Down-Button:hover > * {
+    @apply -translate-y-2;
   }
 }

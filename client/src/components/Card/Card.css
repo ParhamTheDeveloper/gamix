@@ -2,13 +2,13 @@
 
 @layer components {
   .Card {
-    @apply h-[27rem] drop-shadow-xl flex flex-col bg-mediumblue rounded-xl p-4 opacity-0 translate-x-full focus-within:-translate-y-2 focus-within:shadow-2xl focus-within:shadow-blue-700;
+    @apply h-[27rem] drop-shadow-xl flex flex-col bg-mediumblue rounded-xl p-4 opacity-0 focus-within:-translate-y-2 focus-within:shadow-xl focus-within:shadow-blue-700;
     transition-delay: var(--Card-Transition-Delay);
   }
   .Card-Picture {
     @apply h-40 !rounded-2xl;
   }
   .Card-In-Sight {
-    @apply opacity-100 translate-x-0;
+    @apply opacity-100;
   }
 }

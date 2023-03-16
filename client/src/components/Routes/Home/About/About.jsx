@@ -23,9 +23,9 @@ const About = () => {
             کامل یاد بگیرید و اینکه مشکلاتی که من در زمان یادگیری خودم داشتم رو
             از سر راه شما بر دارم.
           </div>
-          <Progress percent="80" label="فرانت اند"/>
-          <Progress percent="60" label="بک اند"/>
-          <Progress percent="75" label="c++"/>
+          <Progress percent="80" label="فرانت اند" />
+          <Progress percent="60" label="بک اند" />
+          <Progress percent="75" label="c++" />
         </div>
       </div>
     </section>
