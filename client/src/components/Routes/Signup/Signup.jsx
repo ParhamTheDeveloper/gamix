@@ -25,11 +25,11 @@ const Signup = () => {
           placeholder="ایمیل"
         />
         <Input className="my-2 w-full" icon={<Key />} placeholder="رمز" />
-        <Button className="mt-auto">ورود</Button>
+        <Button className="mt-auto">ثبت نام</Button>
         <div className="mt-auto flex-end self-center text-white flex flex-row items-center gap-2">
           اکانت داری؟
           <Link to="/login" className="!text-lightsky">
-            وارد شو
+            وارد شوید
           </Link>
         </div>
       </div>

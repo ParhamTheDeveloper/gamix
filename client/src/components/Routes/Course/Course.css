@@ -1,0 +1,18 @@
+@tailwind components;
+
+@layer components {
+  .Course {
+    @apply w-full h-full p-4 md:p-8;
+  }
+  .Course-Items-Wrapper {
+    @apply w-full h-fit rounded-3xl my-8 bg-mediumblue px-4 md:px-8 pb-8 pt-4;
+  }
+  .Course-Download-Button {
+    @apply hidden md:flex flex-row py-2 px-4 items-center gap-x-2 rounded-lg text-xs cursor-pointer outline outline-2 bg-slate-800 outline-slate-900 hover:outline-blue-600 hover:text-blue-600 active:bg-mediumblue;
+  }
+  .Course-Video {
+    @apply m-4 rounded-xl;
+    width: calc(100% - 32px);
+    height: calc(100vh / 2 - 64px) !important;
+  }
+}

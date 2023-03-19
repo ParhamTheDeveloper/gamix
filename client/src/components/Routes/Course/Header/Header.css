@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components {
+  .Course-Header {
+    @apply w-full h-fit drop-shadow-2xl rounded-3xl bg-mediumblue p-4 md:p-8;
+  }
+  .Course-Header-Top {
+    @apply w-full h-fit flex flex-col lg:flex-row;
+  }
+  .Course-Header-Picture {
+    @apply md:basis-1/3 h-80;
+  }
+  .Course-Header-Content {
+    @apply basis-2/3 h-full mx-0 md:mx-8 my-8 lg:my-0;
+  }
+  .Course-Header-Bottom {
+    @apply w-full flex flex-col md:flex-row items-center gap-4 pt-8;
+  }
+  .Course-Header-Tag {
+    @apply flex flex-row items-center justify-center gap-2 rounded-3xl py-2 px-8 bg-lightblue text-mediumsky;
+  }
+}

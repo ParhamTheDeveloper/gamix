@@ -2,7 +2,7 @@
 
 @layer components {
   .Navbar {
-    @apply w-full h-14 sticky top-0 bg-darkblue px-8 z-50 border-b border-b-mediumblue;
+    @apply w-full h-14 sticky top-0 bg-darkblue px-4 md:px-8 z-50 border-b border-b-mediumblue;
   }
   .Navbar-Active-Blur {
     @apply h-16;

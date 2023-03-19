@@ -5,6 +5,6 @@
     @apply bg-slate-900;
   }
   .Footer-Container {
-    @apply w-full h-fit relative p-8;
+    @apply w-full h-fit relative p-4 md:p-8;
   }
 }

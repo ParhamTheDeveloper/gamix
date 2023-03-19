@@ -2,7 +2,7 @@
 
 @layer components {
   .Sidebar {
-    @apply w-64 fixed z-50 bg-darkblue block md:hidden translate-x-64;
+    @apply w-64 fixed bottom-0 z-50 bg-darkblue block md:hidden translate-x-64;
     height: calc(100% - 56px);
   }
   .Sidebar-Active-Blur {

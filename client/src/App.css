@@ -10,11 +10,14 @@
   body {
     @apply bg-[#050511] selection:bg-mediumsky selection:text-white transition-all duration-200;
   }
+  #root {
+    @apply flex flex-col min-h-screen;
+  }
   .Container {
-    @apply 2xl:container mx-auto;
+    @apply 2xl:container 2xl:mx-auto;
   }
   .Transition {
-    @apply transition-all duration-200;
+    @apply transition-all duration-300;
   }
   .Active-Blur {
     @apply !bg-opacity-75 !backdrop-blur-md;

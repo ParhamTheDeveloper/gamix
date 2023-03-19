@@ -1,7 +1,7 @@
-import { ArrowDown } from "react-bootstrap-icons";
-import { Button } from "../Button";
-import { Wave } from "../Wave";
 import "./Header.css";
+import { ArrowDown } from "react-bootstrap-icons";
+import { Button } from "../../../Button";
+import { Wave } from "../../../Wave";
 
 const Header = () => {
   const handleScrollDownButton = () => {

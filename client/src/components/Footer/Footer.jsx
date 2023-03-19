@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <>
-      <Wave src="/Images/Waves/footer.svg" className="Footer-Wave" />
+      <Wave src="/Images/Waves/footer.svg" className="!mt-auto" />
       <footer className="Footer Transition">
         <div className="Footer-Container Container">
           <div className="flex flex-col md:flex-row">

@@ -1,0 +1,28 @@
+@tailwind components;
+
+@layer components {
+  .Accordion {
+    @apply w-full h-fit text-xs md:text-base;
+  }
+  .Accordion-Item {
+    @apply w-full bg-slate-900 rounded-lg text-white;
+  }
+  .Accordion-Title {
+    @apply w-full h-full font-medium drop-shadow-xl rounded-lg p-4 gap-y-4 bg-slate-900 flex flex-col md:flex-row md:items-center justify-between;
+  }
+  .Accordion-Left {
+    @apply flex flex-row items-center gap-x-4;
+  }
+  .Accordion-Arrow {
+    @apply hidden md:block;
+  }
+  .Accordion-Arrow.Accordion-Open {
+    @apply -rotate-90;
+  }
+  .Accordion-Content {
+    @apply overflow-hidden max-h-0 select-none;
+  }
+  .Accordion-Content.Accordion-Open {
+    max-height: calc(100vh / 2);
+  }
+}

@@ -23,7 +23,7 @@ const Card = ({
       `${animationDelay * 10}ms`
     );
   }, []);
-
+  
   return (
     <figure
       ref={cardRef}

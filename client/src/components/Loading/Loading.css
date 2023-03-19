@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+  .Loading-Wrapper {
+    @apply w-full h-screen flex flex-row justify-center items-center p-8;
+  }
+  .Loading {
+    @apply w-80 h-2 bg-lightblue rounded-xl relative overflow-hidden;
+  }
+  .Loading-Inner {
+    @apply w-full h-full absolute rounded-xl bg-lightsky;
+    animation: loading 2s infinite;
+  }
+
+  @keyframes loading {
+    from {
+      width: 5%;
+      left: -5%;
+    }
+    to {
+      width: 75%;
+      left: 105%;
+    }
+  }
+}
