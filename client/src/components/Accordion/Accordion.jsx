@@ -1,7 +1,7 @@
 import "./Accordion.css";
 import { useRef } from "react";
 import { ChevronLeft, Eye } from "react-bootstrap-icons";
-import { Button } from "../components/Button";
+import { Button } from "../Button";
 
 const Accordion = ({ children, title, extra, className }) => {
   const accordionRef = useRef(null);

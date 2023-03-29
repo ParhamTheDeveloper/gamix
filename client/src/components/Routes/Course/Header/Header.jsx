@@ -15,17 +15,17 @@ const Header = ({ course }) => {
           <div className="text-xl my-4 text-white">
             دوره کامل و پروژه محور {course.name}
           </div>
-          <div className="text-gray-300">{course.description}</div>
+          <div className="text-gray-300">{course.description.what}</div>
         </div>
       </div>
       <div className="Course-Header-Bottom">
         <Tag>
           <Mortarboard />
-          {course.students} دانشجو
+          {course.studentsCount} دانشجو
         </Tag>
         <Tag>
           <Box />
-          {course.episodes} جلسه
+          {course.episodesCount} جلسه
         </Tag>
         <Tag>
           <Headset />

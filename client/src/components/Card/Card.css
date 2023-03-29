@@ -2,8 +2,7 @@
 
 @layer components {
   .Card {
-    @apply h-[27rem] drop-shadow-xl flex flex-col bg-mediumblue rounded-xl p-4 opacity-0 focus-within:-translate-y-2 focus-within:shadow-xl focus-within:shadow-blue-700;
-    transition-delay: var(--Card-Transition-Delay);
+    @apply h-[27rem] drop-shadow-xl flex flex-col bg-mediumblue rounded-xl p-4 opacity-0;
   }
   .Card-Picture {
     @apply h-40 !rounded-2xl;

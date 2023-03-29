@@ -1,6 +1,11 @@
 import "./App.css";
 import "./fonts/IranSans.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { Home } from "./components/Routes/Home";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -10,20 +15,29 @@ import { Signup } from "./components/Routes/Signup";
 import { Course } from "./components/Routes/Course";
 import { CoursesProvider } from "./shared/contexts/courses.context";
 import { Loading } from "./components/Loading";
+import { Dashboard } from "./components/Routes/Dashboard";
 import { NotFound } from "./components/Routes/NotFound";
-import { useState, useEffect } from "react";
+import { AuthContext } from "./shared/contexts/auth.context";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 const App = () => {
   const [courses, setCourses] = useState(null);
+  const { user, onLogin } = useContext(AuthContext);
 
   useEffect(() => {
     const loadCourses = () => {
       axios
-        .get("http://localhost:3001/courses/")
+        .get(process.env.REACT_APP_SERVER_URL + "/courses")
         .then((data) => data.data)
         .then((data) => setCourses(data));
     };
+    if (
+      !localStorage.getItem("user_email") ||
+      !localStorage.getItem("user_password")
+    ) {
+      onLogin().then();
+    }
 
     loadCourses();
   }, []);
@@ -63,8 +77,25 @@ const App = () => {
           />
         </Route>
         <Route path="/about-us" element={<h1>About</h1>} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup/" element={<Signup />} />
+        {!user && (
+          <>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup/" element={<Signup />} />
+          </>
+        )}
+        {user && (
+          <>
+            <Route
+              path="/login"
+              element={<Navigate replace to="/dashboard" />}
+            />
+            <Route
+              path="/signup/"
+              element={<Navigate replace to="/dashboard" />}
+            />
+          </>
+        )}
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

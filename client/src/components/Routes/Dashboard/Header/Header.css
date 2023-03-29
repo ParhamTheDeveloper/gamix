@@ -1,0 +1,17 @@
+@tailwind components;
+
+@layer components {
+  .Dashboard-Header {
+    @apply w-full h-fit drop-shadow-2xl p-4 md:px-4 flex md:flex-row md:items-center gap-y-4 rounded-lg bg-slate-900;
+  }
+  .Dashboard-Header-Profile {
+    @apply px-4 flex flex-col;
+  }
+  .Dashboard-Header-Options {
+    @apply mr-auto text-white text-2xl !px-2 !rounded-full;
+    background: none;
+  }
+  .Dashboard-Header-Options:hover {
+    background: none;
+  }
+}

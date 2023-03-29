@@ -1,5 +1,5 @@
 import "./NavbarItem.css";
-import { Link } from "../Link";
+import { Link } from "../../Link";
 
 const Item = ({ children, link }) => {
   return <div className="Navbar-Item">

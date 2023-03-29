@@ -1,28 +1,36 @@
 import "./Navbar.css";
-import * as Icons from "react-bootstrap-icons";
-import Item from "./NavbarItem";
+import Item from "./NavbarItem/NavbarItem";
 import { Button } from "../Button";
-import { useRef } from "react";
-import Sidebar from "../Sidebar/Sidebar";
+import { Sidebar } from "../Sidebar";
+import { AuthContext } from "../../shared/contexts/auth.context";
+import { useContext, useRef } from "react";
+import {
+  BoxArrowInRight,
+  Collection,
+  House,
+  List,
+  Person,
+} from "react-bootstrap-icons";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
   const navbarRef = useRef(null);
   const sidebarRef = useRef(null);
   const items = [
     {
       content: "صفحه اصلی",
       link: "/",
-      icon: <Icons.House />,
+      icon: <House />,
     },
     {
       content: "دوره ها",
       link: "/courses",
-      icon: <Icons.Collection />,
+      icon: <Collection />,
     },
     {
       content: "درباره ما",
       link: "about-us",
-      icon: <Icons.Person />,
+      icon: <Person />,
     },
   ];
 
@@ -51,11 +59,18 @@ const Navbar = () => {
             className="Navbar-Sidebar-Toggler"
             onClick={handleClickSidebar}
           >
-            <Icons.List className="text-2xl" />
+            <List className="text-2xl" />
           </Button>
-          <Button link="login">
-            ورود <Icons.BoxArrowInRight className="text-2xl" />
-          </Button>
+          {user && (
+            <Button link="dashboard" className="!px-3">
+              <Person className="text-2xl" />
+            </Button>
+          )}
+          {!user && (
+            <Button link="login">
+              ورود <BoxArrowInRight className="text-2xl" />
+            </Button>
+          )}
         </div>
       </nav>
       <Sidebar ref={sidebarRef} items={items} />

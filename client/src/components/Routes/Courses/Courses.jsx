@@ -23,9 +23,9 @@ const Courses = () => {
               key={index}
               imgsrc={item.img}
               title={item.name}
-              people={item.students}
+              people={item.studentsCount}
               btnlink={`/courses/${item.name}`}
-              episodes={item.episodes}
+              episodes={item.episodesCount}
               className="Courses-Card"
               animationDelay={index + 1}
             />
