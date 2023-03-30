@@ -9,6 +9,7 @@ const UserShcema = new Schema(
     username: { type: String, required: true, trim: true, minLength: 4 },
     email: { type: String, required: true, trim: true, minLength: 11 },
     password: { type: String, required: true, trim: true, minLength: 6 },
+    rule: { type: String },
     profilePic: { type: String },
     registeredCourses: { type: UserRegisteredCoursesSchema },
     articles: { type: ArticleModel.schema },

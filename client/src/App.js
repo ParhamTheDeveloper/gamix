@@ -33,8 +33,8 @@ const App = () => {
         .then((data) => setCourses(data));
     };
     if (
-      !localStorage.getItem("user_email") ||
-      !localStorage.getItem("user_password")
+      localStorage.getItem("user_email") !== "null" ||
+      localStorage.getItem("user_password") !== "null"
     ) {
       onLogin().then();
     }
@@ -95,7 +95,10 @@ const App = () => {
             />
           </>
         )}
-        <Route path="/dashboard" element={<Dashboard />} />
+        {user && <Route path="/dashboard" element={<Dashboard />} />}
+        {!user && (
+          <Route path="/dashboard" element={<Navigate replace to="/login" />} />
+        )}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

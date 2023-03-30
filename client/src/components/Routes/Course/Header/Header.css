@@ -14,9 +14,9 @@
     @apply basis-2/3 h-full mx-0 md:mx-8 my-8 lg:my-0;
   }
   .Course-Header-Bottom {
-    @apply w-full flex flex-col md:flex-row items-center gap-4 pt-8;
+    @apply w-full flex flex-wrap md:flex-nowrap flex-row items-center gap-4 pt-8;
   }
   .Course-Header-Tag {
-    @apply flex flex-row items-center justify-center gap-2 rounded-3xl py-2 px-8 bg-lightblue text-mediumsky;
+    @apply flex flex-row items-center justify-center gap-2 rounded-3xl text-xs md:text-base px-4 py-2 md:px-8 bg-lightblue text-mediumsky;
   }
 }

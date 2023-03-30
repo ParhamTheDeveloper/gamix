@@ -13,7 +13,7 @@ const Course = () => {
   const courses = useContext(CoursesContext);
   const { name } = useParams();
   const course = courses?.find(
-    (course) => course.name.toLowerCase() == name.toLowerCase()
+    (course) => course.name.toLowerCase() === name.toLowerCase()
   );
   const items = [
     {
@@ -46,7 +46,7 @@ const Course = () => {
   useTitle(
     `${
       course
-        ? `آموزش ${course.name}` + ` | دوره پروژه محور ${course.name}`
+        ? `آموزش ${course.name} | دوره پروژه محور ${course.name}`
         : "دوره مورد نظر پیدا نشد"
     }`
   );
@@ -81,6 +81,7 @@ const Course = () => {
                   extra={
                     <a
                       href={item.video}
+                      rel="noreferrer"
                       target="_blank"
                       className="Course-Download-Button Transition"
                       download

@@ -1,5 +1,5 @@
 import "./Signup.css";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 import { Envelope, Key, Person } from "react-bootstrap-icons";
 import { useScrollToTop, useTitle } from "../../../hooks";
 import { Button } from "../../Button";

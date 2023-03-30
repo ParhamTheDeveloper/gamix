@@ -10,7 +10,9 @@ import {
   House,
   List,
   Person,
+  PersonFill,
 } from "react-bootstrap-icons";
+import { Picture } from "../Picture";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
@@ -61,9 +63,19 @@ const Navbar = () => {
           >
             <List className="text-2xl" />
           </Button>
-          {user && (
-            <Button link="dashboard" className="!px-3">
-              <Person className="text-2xl" />
+          {user?.profilePic && (
+            <Button link="dashboard" className="!w-12 !h-10 !p-0 !rounded-full">
+              <Picture
+                src={user.profilePic}
+                className="h-12 !w-12 md:h-16 md:!w-16 !rounded-full"
+              />
+            </Button>
+          )}
+          {user && !user?.profilePic && (
+            <Button link="dashboard" className="w-10 md:!w-12 !h-10 !p-0 !rounded-full">
+              <div className="h-12 w-12 bg-lightblue md:h-16 md:w-16 rounded-full !text-base flex justify-center items-center md:text-3xl text-white">
+                <PersonFill />
+              </div>
             </Button>
           )}
           {!user && (

@@ -1,5 +1,5 @@
 import "./Login.css";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 import { Envelope, Key } from "react-bootstrap-icons";
 import { useScrollToTop, useTitle } from "../../../hooks";
 import { Button } from "../../Button";

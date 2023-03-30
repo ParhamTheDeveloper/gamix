@@ -1,7 +1,8 @@
+import "./Header.css";
 import { Mortarboard, Box, Cart, Headset } from "react-bootstrap-icons";
 import { Button } from "../../../Button";
 import { Picture } from "../../../Picture";
-import "./Header.css";
+
 const Tag = ({ children }) => {
   return <span className="Course-Header-Tag">{children}</span>;
 };

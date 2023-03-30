@@ -5,7 +5,7 @@ const useAnimation = (ref, styles) => {
   useEffect(() => {
     const animation = new IntersectingAnimation(ref.current, styles);
     animation.animate();
-  }, []);
+  }, [ref, styles]);
 };
 
 export default useAnimation;

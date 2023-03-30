@@ -15,3 +15,7 @@ class DBConnection {
 
 const dbConnection = new DBConnection();
 dbConnection.connect();
+
+module.exports = {
+  dbConnection,
+};

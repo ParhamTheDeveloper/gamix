@@ -1,9 +1,9 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
 const express = require("express");
-const omitEmpty = require("omit-empty");
 const cors = require("cors");
+const omitEmpty = require("omit-empty");
 const app = express();
-require("./configs/mongo.config");
+const mongoConfig = require("./configs/mongo.config");
 const { NotFoundError, ErrorHandler } = require("./middlewares/errorHandler");
 const { CourseModel } = require("./model/course.model");
 const { UserModel } = require("./model/user.model");
@@ -11,10 +11,10 @@ const {
   loginValidator,
   signupValidator,
 } = require("./validators/auth.validator");
-const { validationResult, body } = require("express-validator");
 const { checkValidation } = require("./validators/middlewares/validator");
-const { default: mongoose } = require("mongoose");
+const { encrypt, decrypt } = require("./utils/crypto.utils");
 
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -186,7 +186,11 @@ app.post(
   async (req, res, next) => {
     try {
       const { email, password } = req.body;
-      const users = await UserModel.find();
+      const users = await UserModel.find({});
+      users.forEach((user) => {
+        user.email = decrypt(user.email, "user_secret_email");
+        user.password = decrypt(user.password, "user_secret_password");
+      });
       const user = users.find(
         (user) => user.email == email && user.password == password
       );
@@ -212,16 +216,30 @@ app.post(
   async (req, res, next) => {
     try {
       const { username, email, password } = req.body;
-      const foundUsers = await UserModel.find({
-        username,
+      const users = await UserModel.find({});
+      users.forEach((user) => {
+        user.email = decrypt(user.email, "user_secret_email");
+        user.password = decrypt(user.password, "user_secret_password");
       });
+      const foundUsers = users.find(
+        (user) => user.username == username || user.email == email
+      );
 
-      if (!foundUsers.length) {
+      const cipherEmail = encrypt(email, "user_secret_email");
+      const cipherPassword = encrypt(password, "user_secret_password");
+      if (!foundUsers) {
+        let rule = "کاربر معمولی";
+        if (username === "Parham.tkh") {
+          rule = "ادمین";
+        }
         const result = await UserModel.create({
           username,
-          email,
-          password,
+          email: cipherEmail,
+          password: cipherPassword,
+          rule,
         });
+        result.email = decrypt(cipherEmail, "user_secret_email");
+        result.password = decrypt(cipherPassword, "user_secret_password");
         res.send(result);
       } else {
         throw {

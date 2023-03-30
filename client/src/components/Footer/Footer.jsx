@@ -2,7 +2,6 @@ import "./Footer.css";
 import { HeartFill } from "react-bootstrap-icons";
 import FooterListItem from "./FooterListItem";
 import { Wave } from "../Wave";
-import { useEffect, useRef, useState } from "react";
 
 const Footer = () => {
   const routes = [

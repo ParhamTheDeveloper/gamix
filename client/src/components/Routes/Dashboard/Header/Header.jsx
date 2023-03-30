@@ -35,7 +35,7 @@ const Header = () => {
         )}
         <div className="Dashboard-Header-Profile">
           <div className="text-white">{user.username}</div>
-          <div className="text-sm text-gray-400"></div>
+          <div className="text-sm text-gray-400">{user.rule}</div>
         </div>
       </div>
       <Button className="Dashboard-Header-Options" onClick={handleOptionsClick}>
