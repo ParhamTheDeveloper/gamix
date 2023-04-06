@@ -2,9 +2,9 @@
 
 @layer components {
   .Dashboard {
-    @apply m-4;
+    @apply h-screen max-h-[728px] m-4 md:m-8 2xl:mx-auto;
   }
   .Dashboard-Inner {
-    @apply w-full h-96 p-4 rounded-xl;
+    @apply w-full rounded-xl bg-mediumblue;
   }
 }

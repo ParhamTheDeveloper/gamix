@@ -2,7 +2,7 @@
 
 @layer components {
   .Input-Wrapper {
-    @apply h-12 flex flex-row items-center text-white rounded-xl bg-mediumblue bg-opacity-30 border border-lightblue focus-within:border-blue-600 focus-within:text-blue-600;
+    @apply h-12 flex flex-row items-center text-white rounded-xl bg-mediumblue bg-opacity-30 border-2 border-lightblue focus-within:border-blue-600 focus-within:text-blue-600;
   }
   .Input {
     @apply w-4/5 h-full rounded-xl border-none outline-none caret-white text-white px-4;

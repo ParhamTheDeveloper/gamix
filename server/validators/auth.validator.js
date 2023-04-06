@@ -5,7 +5,7 @@ const loginValidator = () => {
     body("email").isEmail().withMessage("ایمیل وارد شده معتبر نیست"),
     body("password")
       .isLength({ min: 6 })
-      .withMessage("رگذرواژه وارد شده حداقل باید 6 کاراکتر باشد"),
+      .withMessage("گذرواژه وارد شده حداقل باید 6 کاراکتر باشد"),
   ];
 };
 

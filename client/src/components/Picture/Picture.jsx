@@ -1,8 +1,8 @@
 import "./Picture.css";
 
-const Picture = ({ src, alt, className }) => {
+const Picture = ({ src, alt, className, parentClassName }) => {
   return (
-    <picture>
+    <picture className={`${parentClassName}`}>
       <img
         className={`Picture Transition ${className}`}
         src={src}

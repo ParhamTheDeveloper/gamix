@@ -1,5 +1,4 @@
 import "./Signup.css";
-import { useContext, useRef } from "react";
 import { Envelope, Key, Person } from "react-bootstrap-icons";
 import { useScrollToTop, useTitle } from "../../../hooks";
 import { Button } from "../../Button";
@@ -7,11 +6,13 @@ import { Input } from "../../Input";
 import { Link } from "../../Link";
 import { AuthContext } from "../../../shared/contexts/auth.context";
 import { useNavigate } from "react-router-dom";
+import { useContext, useRef, useState } from "react";
 
 const Signup = () => {
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const [error, setError] = useState(null);
   const { onSignup } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -23,9 +24,10 @@ const Signup = () => {
         passwordRef.current.value
       );
     } catch (error) {
-      console.log(error);
+      setError(error);
     }
-    navigate("/dashboard");
+    if (!error.username && !error.email && !error.password)
+      navigate("/dashboard");
   };
 
   useTitle("ثبت نام");
@@ -33,23 +35,26 @@ const Signup = () => {
 
   return (
     <section className="Signup-Wrapper Container">
-      <div className="Signup Active-Blur">
+      <div className={`Signup Active-Blur ${error && "!h-[42rem] md:!h-[40rem]"}`}>
         <div className="text-2xl text-white text-center">وقت ثبت نامه!</div>
         <div className="text-lg text-center my-4 text-gray-300">
           لطفا یک اکانت برای خود بسازید
         </div>
+        <div className="text-sm text-red-500 mx-2">{error?.username}</div>
         <Input
           ref={usernameRef}
-          className="mt-8 mb-2 w-full"
+          className={`${error ? "mt-4" : "mt-8"} mb-2 w-full`}
           icon={<Person />}
           placeholder="نام کاربری"
         />
+        <div className="text-sm text-red-500 mx-2">{error?.email}</div>
         <Input
           ref={emailRef}
           className="mt-2 mb-2 w-full"
           icon={<Envelope />}
           placeholder="ایمیل"
         />
+        <div className="text-sm text-red-500 mx-2">{error?.password}</div>
         <Input
           ref={passwordRef}
           className="my-2 w-full"

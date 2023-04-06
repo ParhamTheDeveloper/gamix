@@ -13,7 +13,7 @@ const ErrorHandler = (err, req, res, next) => {
     statusCode: err.status || 500, // 500 status code means unexpected error while processing the request
     error: {
       message: err.message || "مشکل داخلی سرور",
-      invalidParams: err.error
+      invalidParams: err.error,
     },
   });
 };

@@ -6,7 +6,7 @@ import { AuthContext } from "../../../../../shared/contexts/auth.context";
 import { useNavigate } from "react-router-dom";
 import { useScrollToTop, useTitle } from "../../../../../hooks";
 
-const Menu = forwardRef((props, ref) => {
+const Menu = forwardRef(({ onClicks = [] }, ref) => {
   const { onLogout } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -22,21 +22,23 @@ const Menu = forwardRef((props, ref) => {
     {
       children: "حساب کاربری",
       icon: <Person />,
+      onClick: onClicks[0],
     },
     {
       children: "دوره های من",
       icon: <Mortarboard />,
+      onClick: onClicks[1],
     },
     {
       children: "خروج",
       className: "!text-red-500",
-      onClick: handleLogout,
       icon: <BoxArrowLeft />,
+      onClick: handleLogout,
     },
   ];
 
   return (
-    <div ref={ref} className="Dashboard-Header-Menu Transition Active-Blur">
+    <div ref={ref} className="Dashboard-Header-Menu Transition">
       {items.map((item, index) => (
         <Item key={index} icon={item.icon} onClick={item.onClick}>
           {item.children}

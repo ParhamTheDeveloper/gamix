@@ -2,6 +2,6 @@
 
 @layer components {
   .Picture {
-    @apply w-full rounded-xl;
+    @apply w-full rounded-xl object-cover;
   }
 }

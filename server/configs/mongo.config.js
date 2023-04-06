@@ -1,4 +1,4 @@
-require("dotenv").config();
+const dotenv = require("dotenv").config();
 const { default: mongoose } = require("mongoose");
 
 class DBConnection {
@@ -13,9 +13,4 @@ class DBConnection {
   }
 }
 
-const dbConnection = new DBConnection();
-dbConnection.connect();
-
-module.exports = {
-  dbConnection,
-};
+module.exports = DBConnection;

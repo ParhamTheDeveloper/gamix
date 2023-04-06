@@ -6,17 +6,15 @@ import { Picture } from "../../../Picture";
 import { AuthContext } from "../../../../shared/contexts/auth.context";
 import { useContext, useRef } from "react";
 
-const Header = () => {
+const Header = ({ onClicks }) => {
   const menuRef = useRef(null);
   const { user } = useContext(AuthContext);
 
   const handleOptionsClick = (e) => {
     const button = e.currentTarget;
     menuRef.current.classList.toggle("Active");
-    menuRef.current.style.top = `${button.getBoundingClientRect().top - 48}px`;
-    menuRef.current.style.left = `${
-      button.getBoundingClientRect().left - 16
-    }px`;
+    menuRef.current.style.top = `${button.getBoundingClientRect().top - 32}px`;
+    menuRef.current.style.left = `${button.getBoundingClientRect().left}px`;
   };
 
   return (
@@ -41,7 +39,7 @@ const Header = () => {
       <Button className="Dashboard-Header-Options" onClick={handleOptionsClick}>
         <ThreeDotsVertical />
       </Button>
-      <Menu ref={menuRef} />
+      <Menu ref={menuRef} onClicks={onClicks} />
     </div>
   );
 };

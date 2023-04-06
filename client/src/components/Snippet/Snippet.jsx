@@ -12,6 +12,14 @@ const Snippet = ({ codes, extension, className }) => {
     navigator.clipboard.writeText(text);
     e.currentTarget.classList.add("!bg-green-400");
     setAlreadyCopied(true);
+    setTimeout(
+      (elem) => {
+        elem.classList.remove("!bg-green-400");
+        setAlreadyCopied(false);
+      },
+      3000,
+      e.currentTarget
+    );
   };
 
   return (

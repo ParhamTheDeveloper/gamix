@@ -2,9 +2,9 @@
 
 @layer components {
   .Dashboard-Header-Menu {
-    @apply w-52 px-4 drop-shadow-2xl rounded-lg bg-mediumblue absolute opacity-0 scale-0;
+    @apply w-52 px-4 rounded-lg absolute bg-mediumblue drop-shadow-2xl scale-0;
   }
   .Dashboard-Header-Menu.Active {
-    @apply opacity-100 scale-100;
+    @apply scale-100;
   }
 }

@@ -9,7 +9,7 @@ const checkValidation = (req, res, next) => {
   if (Object.keys(error).length) {
     throw {
       status: 400,
-      message: "Validation error",
+      message: "Validation Error",
       error,
     };
   }

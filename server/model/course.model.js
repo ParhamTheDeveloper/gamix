@@ -29,6 +29,7 @@ const CourseSchema = new Schema(
     },
     episodesCount: { type: Number, default: 0 },
     studentsCount: { type: Number, default: 0 },
+    condition: { type: String, default: "در حال ضبط" },
   },
   {
     timestamps: true,
