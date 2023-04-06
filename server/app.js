@@ -14,11 +14,16 @@ class Server {
     this.useRoutes();
   }
 
-  config() {
+  async config() {
     dotenv.config();
     const db = new DBConnection();
     try {
-      db.connect();
+      this.dbconnection = await db.connect();
+      if (process.env.NODE_ENV !== "production") {
+        console.log(
+          `Database connected at port ${this.dbconnection.connection.host}`
+        );
+      }
     } catch (error) {
       console.log(error);
     }
@@ -53,7 +58,9 @@ class Server {
 
   listen() {
     this.app.listen(process.env.PORT, () => {
-      console.log(`Running server at port ${process.env.PORT}`);
+      if (process.env.NODE_ENV !== "production") {
+        console.log(`Running server at port ${process.env.PORT}`);
+      }
     });
   }
 }

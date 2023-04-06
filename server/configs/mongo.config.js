@@ -12,8 +12,9 @@ class DBConnection {
     let conn;
     try {
       conn = await mongoose.connect(this.#DB_URL, {
-        useUnifiedTopology: true,
         useNewUrlParser: true,
+        useUnifiedTopology: true,
+        authSource: "admin",
       });
     } catch (error) {
       console.log(`Database Error: ${error.message}`);
