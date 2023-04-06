@@ -4,8 +4,8 @@ const userRouter = require("./user.router");
 const authRouter = require("./auth.router");
 const router = Router();
 
-router.use("/courses", courseRouter);
-router.use("/", userRouter);
-router.use("/", authRouter);
+router.use("/api/courses", courseRouter);
+router.use("/api/", userRouter);
+router.use("/api/", authRouter);
 
 module.exports = router;

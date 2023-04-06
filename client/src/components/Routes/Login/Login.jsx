@@ -21,7 +21,9 @@ const Login = () => {
     } catch (error) {
       setError(error);
     }
-    if (!error.email && !error.password) navigate("/dashboard");
+    if (error) {
+      if (!error?.email && !error?.password) navigate("/dashboard");
+    }
   };
 
   useTitle("ثبت نام");

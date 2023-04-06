@@ -15,16 +15,18 @@ const Header = ({ course }) => {
   const { user } = useContext(AuthContext);
 
   const handleRegisterCourseClick = async () => {
-    const data = await axios.patch(
+    await axios.patch(
       process.env.REACT_APP_SERVER_URL +
         `/user/course?username=${user.username}&courseId=${course._id}`
     );
   };
 
   useEffect(() => {
-    user.registeredCourses.find(
-      (userCourse) => userCourse.name === course.name
-    ) && setIsRegistered(true);
+    if (user) {
+      user.registeredCourses.find(
+        (userCourse) => userCourse.name === course.name
+      ) && setIsRegistered(true);
+    }
   }, []);
 
   return (
@@ -67,7 +69,9 @@ const Header = ({ course }) => {
               </Button>
             )))}
         {isRegistered && (
-          <div className="hidden md:flex mr-auto text-xl text-white">از دوره لذت ببر :)</div>
+          <div className="hidden md:flex mr-auto text-xl text-white">
+            از دوره لذت ببر :)
+          </div>
         )}
       </div>
       {!isRegistered &&
@@ -89,7 +93,9 @@ const Header = ({ course }) => {
             </Button>
           )))}
       {isRegistered && (
-        <div className="md:hidden mr-auto text-xl text-white">از دوره لذت ببر :)</div>
+        <div className="md:hidden mr-auto text-xl text-white">
+          از دوره لذت ببر :)
+        </div>
       )}
     </header>
   );

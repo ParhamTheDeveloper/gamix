@@ -9,7 +9,16 @@ class DBConnection {
   }
 
   async connect() {
-    return await mongoose.connect(this.#DB_URL);
+    let conn;
+    try {
+      conn = await mongoose.connect(this.#DB_URL, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+      });
+    } catch (error) {
+      console.log(`Database Error: ${error.message}`);
+    }
+    return conn;
   }
 }
 

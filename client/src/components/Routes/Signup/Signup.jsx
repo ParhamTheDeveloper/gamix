@@ -26,8 +26,10 @@ const Signup = () => {
     } catch (error) {
       setError(error);
     }
-    if (!error.username && !error.email && !error.password)
-      navigate("/dashboard");
+    if (error) {
+      if (!error.username || !error.email || !error.password)
+        navigate("/dashboard");
+    }
   };
 
   useTitle("ثبت نام");
@@ -35,7 +37,9 @@ const Signup = () => {
 
   return (
     <section className="Signup-Wrapper Container">
-      <div className={`Signup Active-Blur ${error && "!h-[42rem] md:!h-[40rem]"}`}>
+      <div
+        className={`Signup Active-Blur ${error && "!h-[42rem] md:!h-[40rem]"}`}
+      >
         <div className="text-2xl text-white text-center">وقت ثبت نامه!</div>
         <div className="text-lg text-center my-4 text-gray-300">
           لطفا یک اکانت برای خود بسازید

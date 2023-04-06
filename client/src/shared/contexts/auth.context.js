@@ -10,8 +10,8 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = async (email, password) => {
     const url = process.env.REACT_APP_SERVER_URL + "/login";
     if (
-      localStorage.getItem("user_email") === "null" &&
-      localStorage.getItem("user_password") === "null"
+      localStorage.getItem("user_email") == "null" &&
+      localStorage.getItem("user_password") == "null"
     ) {
       const result = await axios.post(url, {
         email,
@@ -56,8 +56,8 @@ export const AuthProvider = ({ children }) => {
   const handleSignup = async (username, email, password) => {
     const url = process.env.REACT_APP_SERVER_URL + "/signup";
     if (
-      localStorage.getItem("user_email") === "null" &&
-      localStorage.getItem("user_password") === "null"
+      localStorage.getItem("user_email") == "null" &&
+      localStorage.getItem("user_password") == "null"
     ) {
       const result = await axios.post(url, {
         username,
@@ -103,8 +103,8 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogout = async () => {
     setUser(null);
-    localStorage.setItem("user_email", null);
-    localStorage.setItem("user_password", null);
+    localStorage.setItem("user_email", "null");
+    localStorage.setItem("user_password", "null");
   };
 
   const value = {

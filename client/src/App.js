@@ -20,6 +20,7 @@ import { NotFound } from "./components/Routes/NotFound";
 import { AuthContext } from "./shared/contexts/auth.context";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import About from "./components/Routes/About/About";
 
 const App = () => {
   const [courses, setCourses] = useState(null);
@@ -76,7 +77,7 @@ const App = () => {
             }
           />
         </Route>
-        <Route path="/about-us" element={<h1>About</h1>} />
+        <Route path="/about-us" element={<About />} />
         {!user && (
           <>
             <Route path="/login" element={<Login />} />
