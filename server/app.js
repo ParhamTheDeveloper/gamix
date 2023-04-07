@@ -15,7 +15,7 @@ class Server {
   }
 
   async config() {
-    dotenv.config();
+    dotenv.config({ path: __dirname + "/.env" });
     const db = new DBConnection();
     try {
       this.dbconnection = await db.connect();

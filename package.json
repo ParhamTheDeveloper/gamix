@@ -1,0 +1,21 @@
+{
+  "name": "gamix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parham-develope/gamix.git"
+  },
+  "keywords": [],
+  "author": "Parham Taherkhany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Parham-develope/gamix/issues"
+  },
+  "homepage": "/"
+}

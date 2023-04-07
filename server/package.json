@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "gamix_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gamix's server side project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
     "build": "npm install"
   },
   "keywords": [],
-  "author": "",
+  "author": "Parham Taherkhany",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5"
